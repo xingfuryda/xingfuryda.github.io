@@ -27,9 +27,7 @@
           </div>
 
           <nav>
-            {% if page.title == "About" %}{{ <a href="{{ site.baseurl }}/">Home</a> }}{% endif %}
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
+            <a href="{% if page.title == "About" %}{{ site.baseurl }}/{% else %}{{ site.baseurl }}/about{% endif %}">{% if page.title == "About" %}{{ "Home" }}{% else %}{{ "About" }}{% endif %}</a>
           </nav>
         </header>
       </div>
